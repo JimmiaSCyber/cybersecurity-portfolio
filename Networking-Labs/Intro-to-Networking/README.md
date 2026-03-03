@@ -36,3 +36,220 @@ Build foundational knowledge of networking concepts and troubleshooting tools.
 
 ## Why This Matters for MSP Roles
 Understanding networking fundamentals allows IT technicians to diagnose connectivity issues, identify service exposure, and support client network environments effectively.
+
+
+# TryHackMe – Introductory Networking Write-Up
+
+## Room Overview
+This room provides foundational knowledge of networking concepts and introduces core tools used for troubleshooting and analysis. The focus is on understanding how data moves across networks and how to verify connectivity and domain resolution.
+
+---
+
+# Task 1 – Introduction
+
+The objective of this room is to build a foundational understanding of networking principles. Networking is essential in cybersecurity and IT because nearly all systems rely on communication between devices. This room introduces the models and tools that explain how that communication works.
+
+## The topics that we're going to cover are:
+
+  - The OSI Model
+  - The TCP/IP Model
+  - How these models look in practice
+  - An introduction to basic networking tools
+
+---
+
+# Task 2 – The OSI Model: An Overview
+
+The OSI (Open Systems Interconnection) Model is a standardized conceptual framework used to understand how data travels across a network. While real-world networking is primarily based on the TCP/IP model, the OSI model provides a clearer theoretical structure for understanding how communication occurs between systems.
+
+The OSI model consists of seven layers:
+
+1. Application  
+2. Presentation  
+3. Session  
+4. Transport  
+5. Network  
+6. Data Link  
+7. Physical  
+
+A common mnemonic used to remember these layers (from Layer 7 to Layer 1) is:
+
+"All People Seem To Need Data Processing" or a fun one that I like is "All People Seem To Need Dominos Pizza"
+
+Each layer plays a specific role in the transmission of data.
+
+---
+
+## Layer 7 – Application
+
+The Application layer provides networking services directly to software applications. It allows programs such as web browsers or email clients to communicate over the network.
+
+This layer does not include the application itself, but rather the protocols that allow the application to send and receive data (e.x., HTTP, FTP, SMTP).
+
+Once data is prepared for transmission, it moves down to the Presentation layer.
+
+---
+
+## Layer 6 – Presentation
+
+The Presentation layer ensures that data is formatted in a standardized way so that it can be understood by the receiving system.
+
+Its responsibilities include:
+- Data formatting and translation
+- Encryption and decryption
+- Compression and decompression
+
+This ensures compatibility between different systems before passing the data to the Session layer.
+
+---
+
+## Layer 5 – Session
+
+The Session layer establishes, maintains, and terminates communication sessions between devices.
+
+It ensures:
+- A stable connection is created
+- Sessions remain synchronized
+- Multiple sessions can operate simultaneously without interference
+
+This layer is essential for managing multiple communications at once, such as browsing multiple websites in separate tabs.
+
+---
+
+## Layer 4 – Transport
+
+The Transport layer is responsible for end-to-end communication and reliability.
+
+Its main functions include:
+- Selecting the transmission protocol (TCP or UDP)
+- Segmenting data into smaller pieces
+- Ensuring data integrity and proper delivery
+
+TCP (Transmission Control Protocol):
+- Connection-based
+- Reliable
+- Ensures packets arrive in order
+- Retransmits lost packets
+
+UDP (User Datagram Protocol):
+- Connectionless
+- Faster
+- No guarantee of delivery
+- Used where speed is prioritized over reliability (e.g., streaming)
+
+---
+
+## Layer 3 – Network
+
+The Network layer is responsible for logical addressing and routing.
+
+It determines:
+- The destination IP address
+- The best route for data to travel across networks
+
+Logical addressing (IP addresses) allows devices to be identified and located across interconnected networks. IPv4 (e.g., 192.168.1.1) is the most commonly used format.
+
+---
+
+## Layer 2 – Data Link
+
+The Data Link layer handles physical addressing using MAC addresses.
+
+Responsibilities include:
+- Adding the physical (MAC) address of the destination
+- Framing data for transmission
+- Detecting transmission errors
+
+Each device has a Network Interface Card (NIC) with a unique MAC address assigned by the manufacturer.
+
+This layer ensures data is correctly delivered within a local network segment.
+
+---
+
+## Layer 1 – Physical
+
+The Physical layer deals with the hardware and transmission medium.
+
+It is responsible for:
+- Converting binary data into electrical, optical, or radio signals
+- Sending signals across cables or wireless connections
+- Receiving signals and converting them back into binary
+
+This is the lowest level of networking, focused purely on physical signal transmission.
+
+---
+
+# Task 3 – Encapsulation
+
+Encapsulation is the process of adding layer-specific information to data as it moves down through the OSI model before being transmitted across a network.
+
+As data passes through each layer, additional information is added to the beginning of the transmission in the form of headers. These headers contain details relevant to that specific layer.
+
+For example:
+
+- The Transport layer adds information related to the protocol being used (such as TCP or UDP), including port numbers and sequencing data.
+- The Network layer adds logical addressing information, such as the source and destination IP addresses.
+- The Data Link layer adds physical addressing information (MAC addresses) and also appends a trailer used for error detection.
+
+The trailer added at the Data Link layer helps verify that the data has not been corrupted during transmission. If the data were altered or damaged, this verification process would detect it.
+
+This structured wrapping of data is known as encapsulation.
+
+---
+
+## Naming of Data at Each Layer
+
+As encapsulation occurs, the data is referred to by different names depending on its stage in the process:
+
+- Layers 7, 6, and 5 (Application, Presentation, Session): Data
+- Layer 4 (Transport): Segment (TCP) or Datagram (UDP)
+- Layer 3 (Network): Packet
+- Layer 2 (Data Link): Frame
+- Layer 1 (Physical): Bits
+
+By the time the data reaches the Physical layer, it is transmitted as electrical or wireless signals.
+
+---
+
+## De-Encapsulation
+
+When the receiving system gets the transmission, the process is reversed.
+
+Starting at the Physical layer and moving upward:
+
+- The Physical layer converts signals back into binary data.
+- The Data Link layer removes the frame header and trailer.
+- The Network layer removes the IP header.
+- The Transport layer processes port and session information.
+- The Application layer receives the original data.
+
+This reverse process is called de-encapsulation.
+
+---
+
+## Why Encapsulation Matters
+
+Encapsulation provides a standardized method for transmitting data between devices. Because all network-enabled systems follow this same structured process, devices from different manufacturers and operating systems can communicate reliably.
+
+This consistency ensures that data sent from one system can be correctly interpreted by another, regardless of platform differences.
+
+Encapsulation and de-encapsulation form the foundation of modern network communication.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
