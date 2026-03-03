@@ -465,7 +465,7 @@ If the target responds, it confirms:
 
 ## Ping Example Command
 
-
+![Ping Example Command](screenshots/ping-command-example.png)
 
 ---
 
