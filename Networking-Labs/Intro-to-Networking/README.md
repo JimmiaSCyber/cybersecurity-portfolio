@@ -394,6 +394,8 @@ Understanding the TCP handshake is important for troubleshooting connectivity is
 
 ### UDP (User Datagram Protocol)
 
+![TCP vs UDP](screenshots/tcp-vs-udp.png)
+
 UDP is a connectionless transport protocol designed for speed and efficiency.
 
 Unlike TCP, UDP does not establish a connection before sending data. There is no handshake process, no acknowledgment of received packets, and no retransmission of lost data.
