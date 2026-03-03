@@ -14,18 +14,21 @@ Build foundational knowledge of networking concepts and troubleshooting tools.
 ---
 
 ## Practical Commands Used
-ping  
-traceroute 
-whois  
-dig
+
+- `ping example.com`
+- `traceroute example.com`
+- `whois example.com`
+- `dig example.com`
 
 ---
 
 ## What Each Command Does
-- **ping** – Tests connectivity between hosts using ICMP.
-- **traceroute** – Identifies the path packets take to reach a destination.
-- **whois** – Retrieves domain registration and ownership information.
-- **dig** – Queries DNS records to verify domain resolution.
+
+- **ping** – Tests basic network connectivity using ICMP requests.
+- **traceroute** – Displays the route packets take to reach a destination host.
+- **whois** – Retrieves domain registration and ownership details.
+- **dig** – Performs DNS queries to analyze domain resolution and records.
+
 ## Screenshots
 (Screenshots will be added below)
 
