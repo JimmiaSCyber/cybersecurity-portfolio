@@ -243,6 +243,154 @@ This consistency ensures that data sent from one system can be correctly interpr
 
 Encapsulation and de-encapsulation form the foundation of modern network communication.
 
+# Task 4 – The TCP/IP Model
+
+![TCP IP MODEL](screenshots/TCPIPMODEL.png)
+
+While the OSI model provides a strong theoretical framework, real-world networking primarily operates using the TCP/IP model.
+
+The TCP/IP model is more streamlined and consists of four layers:
+
+1. Application
+2. Transport
+3. Internet
+4. Network Interface
+
+This model simplifies the seven layers of the OSI model into practical groupings that align with how internet communication actually functions.
+
+---
+
+## Layer Breakdown
+
+### Application Layer
+
+The Application layer combines the OSI Application, Presentation, and Session layers into one.
+
+It handles:
+- Web traffic (HTTP/HTTPS)
+- Email communication (SMTP)
+- File transfers (FTP)
+- Domain name resolution (DNS)
+
+This is where applications interact with network services.
+
+---
+
+### Transport Layer
+
+The Transport layer is responsible for end-to-end communication between devices.
+
+It determines:
+- Whether TCP (reliable) or UDP (faster, connectionless) is used
+- How data is segmented
+- Port numbers used for communication
+
+TCP ensures reliable delivery through acknowledgments and retransmissions.  
+UDP prioritizes speed over reliability.
+
+---
+
+### Internet Layer
+
+The Internet layer is responsible for logical addressing and routing.
+
+It handles:
+- IP addressing
+- Packet routing between networks
+
+This layer determines how data moves across interconnected networks, including the internet.
+
+---
+
+### Network Interface Layer
+
+The Network Interface layer corresponds to the lower layers of the OSI model (Data Link and Physical).
+
+It is responsible for:
+- Physical transmission of data
+- MAC addressing
+- Framing
+
+This layer ensures data can move across the local network medium.
+
+---
+
+## Relationship Between OSI and TCP/IP
+
+The OSI model is primarily conceptual and used for learning and troubleshooting.
+
+The TCP/IP model is the practical implementation used in modern networking.
+
+Understanding both models helps technicians:
+- Diagnose issues at the correct layer
+- Interpret packet captures
+- Understand how protocols interact
+
+## TCP Three-Way Handshake
+
+![TCP Three-Way Handshake](screenshots/tcp-three-way-handshake.png)
+
+When TCP is selected as the transport protocol, communication begins with a process called the Three-Way Handshake.
+
+This process establishes a reliable connection between two devices before any actual data is transmitted.
+
+The handshake consists of three steps:
+
+### Step 1 – SYN
+
+The client sends a SYN (synchronize) packet to the server.
+
+This packet:
+- Requests to start a connection
+- Includes an initial sequence number
+
+At this point, the client is asking:  
+"Are you available to communicate?"
+
+---
+
+### Step 2 – SYN-ACK
+
+The server responds with a SYN-ACK packet.
+
+This packet:
+- Acknowledges the client’s SYN request
+- Sends its own SYN request back to the client
+
+The server is essentially replying:  
+"I received your request, and I’m ready."
+
+---
+
+### Step 3 – ACK
+
+The client sends an ACK (acknowledgment) packet back to the server.
+
+This confirms:
+- The server’s response was received
+- The connection is officially established
+
+At this point, data transmission can begin.
+
+---
+
+## Why the Three-Way Handshake Matters
+
+The TCP handshake ensures:
+
+- Both devices are ready to communicate
+- Sequence numbers are synchronized
+- Reliable, ordered data delivery can occur
+- Lost packets can be detected and retransmitted
+
+This reliability is why TCP is used for:
+
+- Web browsing (HTTP/HTTPS)
+- File transfers
+- Email communication
+- Secure connections
+
+Understanding the TCP handshake is important for troubleshooting connectivity issues and analyzing packet captures in tools such as Wireshark.
 
 
 
