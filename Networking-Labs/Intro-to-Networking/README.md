@@ -185,6 +185,8 @@ This is the lowest level of networking, focused purely on physical signal transm
 
 # Task 3 – Encapsulation
 
+## Encapsulation Process Diagram
+
 ![Encapsulation Process](screenshots/encapsulation-process-diagram.png)
 
 Encapsulation is the process of adding layer-specific information to data as it moves down through the OSI model before being transmitted across a network.
