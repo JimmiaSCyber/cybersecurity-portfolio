@@ -423,7 +423,28 @@ UDP sacrifices reliability for performance, making it efficient but less control
 
 ## Common Ports 
 
+![Common Ports](screenshots/Twenty-Common-Ports.png)
 
+Common well-known ports include:
+
+- **Port 20/21 (FTP)** – File Transfer Protocol  
+- **Port 22 (SSH)** – Secure remote login  
+- **Port 23 (Telnet)** – Unencrypted remote login  
+- **Port 25 (SMTP)** – Email transmission  
+- **Port 53 (DNS)** – Domain name resolution  
+- **Port 80 (HTTP)** – Unencrypted web traffic  
+- **Port 443 (HTTPS)** – Encrypted web traffic  
+- **Port 110 (POP3)** – Email retrieval  
+- **Port 143 (IMAP)** – Email retrieval and management  
+- **Port 3389 (RDP)** – Remote Desktop Protocol  
+
+Ports are divided into ranges:
+
+- 0–1023: Well-known ports (standard services)
+- 1024–49151: Registered ports
+- 49152–65535: Dynamic or private ports
+
+Ports are numerical identifiers used at the Transport layer to direct traffic to the correct service on a device. While an IP address identifies the host, the port number identifies the specific application or service running on that host. Understanding common ports is important for troubleshooting, firewall configuration, and identifying exposed services during network analysis. For example, if port 80 or 443 is open on a host, it typically indicates a web service is running. If port 22 is open, SSH access may be enabled.
 
 
 
