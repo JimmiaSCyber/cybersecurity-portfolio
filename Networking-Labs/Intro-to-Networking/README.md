@@ -506,11 +506,37 @@ If ping fails, it can indicate:
 
 Ping provides a quick way to verify basic network communication before moving to more advanced diagnostics.
 
+## Testing by Domain vs IP Address
 
+Ping can be used with either a domain name or a direct IP address.
 
+Example:
 
+ping tryhackme.com  
+ping 8.8.8.8  
 
+If ping works with an IP address but fails with a domain name, this may indicate a DNS resolution issue rather than a network connectivity problem.
 
+## Packet Loss and Latency
+
+Two important values displayed in ping output are:
+
+- **Latency (ms)** – The round-trip time for packets.
+- **Packet Loss (%)** – The percentage of packets that did not return.
+
+High latency can indicate network congestion or routing delays.
+
+Packet loss may suggest:
+- Network instability
+- Hardware issues
+- Wireless interference
+- Firewall filtering
+
+## Limitations of Ping
+
+Ping relies on ICMP, which may be disabled or blocked by firewalls.
+
+If a host does not respond to ping, it does not always mean the system is offline. It may simply be configured not to respond to ICMP requests.
 
 
 
