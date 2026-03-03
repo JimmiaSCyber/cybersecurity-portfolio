@@ -449,7 +449,62 @@ Ports are divided into ranges:
 Ports are numerical identifiers used at the Transport layer to direct traffic to the correct service on a device. While an IP address identifies the host, the port number identifies the specific application or service running on that host. Understanding common ports is important for troubleshooting, firewall configuration, and identifying exposed services during network analysis. For example, if port 80 or 443 is open on a host, it typically indicates a web service is running. If port 22 is open, SSH access may be enabled.
 
 
+# Task 5 – Ping
 
+The `ping` command is a basic network troubleshooting tool used to test connectivity between two devices.
+
+It works by sending ICMP (Internet Control Message Protocol) Echo Request packets to a target host and waiting for an Echo Reply.
+
+If the target responds, it confirms:
+
+- The device is reachable
+- Network connectivity exists
+- DNS resolution may be functioning (if a domain name is used)
+
+---
+
+## Ping Example Command
+
+
+
+---
+
+## What Ping Output Shows
+
+When running the command, the output typically displays:
+
+- The resolved IP address of the domain
+- The time it takes for packets to travel (latency)
+- The number of packets sent and received
+- Whether any packets were lost
+
+Key indicators include:
+
+- **Reply from** – The target responded successfully.
+- **Time=XX ms** – Round-trip latency in milliseconds.
+- **Packet loss** – Indicates possible connectivity issues.
+
+---
+
+## Why Ping Matters
+
+Ping is often the first step in troubleshooting network problems.
+
+It helps determine:
+
+- If a host is online
+- If there is a routing issue
+- If DNS resolution is working
+- If there is high latency or packet loss
+
+If ping fails, it can indicate:
+
+- The host is offline
+- A firewall is blocking ICMP
+- A routing issue exists
+- DNS is not resolving properly
+
+Ping provides a quick way to verify basic network communication before moving to more advanced diagnostics.
 
 
 
