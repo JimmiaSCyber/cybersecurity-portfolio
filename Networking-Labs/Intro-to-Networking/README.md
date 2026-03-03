@@ -15,10 +15,10 @@ Build foundational knowledge of networking concepts and troubleshooting tools.
 
 ## Practical Commands Used
 
-- `ping example.com`
-- `traceroute example.com`
-- `whois example.com`
-- `dig example.com`
+- `ping`
+- `traceroute`
+- `whois`
+- `dig`
 
 ---
 
