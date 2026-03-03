@@ -392,7 +392,36 @@ This reliability is why TCP is used for:
 
 Understanding the TCP handshake is important for troubleshooting connectivity issues and analyzing packet captures in tools such as Wireshark.
 
+### UDP (User Datagram Protocol)
 
+UDP is a connectionless transport protocol designed for speed and efficiency.
+
+Unlike TCP, UDP does not establish a connection before sending data. There is no handshake process, no acknowledgment of received packets, and no retransmission of lost data.
+
+When data is sent over UDP:
+- It is transmitted immediately.
+- There is no guarantee it will arrive.
+- There is no guarantee it will arrive in order.
+- There is no built-in error recovery.
+
+Because UDP has minimal overhead, it is significantly faster than TCP. It does not spend time confirming delivery or managing sequence numbers.
+
+UDP is ideal in situations where:
+- Speed is more important than perfect accuracy.
+- Small amounts of data are transmitted frequently.
+- Occasional packet loss is acceptable.
+
+Common uses of UDP include:
+- Video streaming
+- Online gaming
+- Voice over IP (VoIP)
+- DNS queries
+
+For example, in video streaming, losing a single packet may cause a brief visual glitch, but retransmitting that packet would take too long and interrupt playback. In this case, speed is more important than reliability.
+
+UDP sacrifices reliability for performance, making it efficient but less controlled than TCP.
+
+## Common Ports 
 
 
 
