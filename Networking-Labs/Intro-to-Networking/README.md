@@ -60,6 +60,10 @@ The objective of this room is to build a foundational understanding of networkin
 
 # Task 2 – The OSI Model: An Overview
 
+## OSI Model Diagram & Mnemonic
+
+![OSI Model Overview](screenshots/osi-model-overview.png)
+
 The OSI (Open Systems Interconnection) Model is a standardized conceptual framework used to understand how data travels across a network. While real-world networking is primarily based on the TCP/IP model, the OSI model provides a clearer theoretical structure for understanding how communication occurs between systems.
 
 The OSI model consists of seven layers:
@@ -180,6 +184,9 @@ This is the lowest level of networking, focused purely on physical signal transm
 ---
 
 # Task 3 – Encapsulation
+
+
+![Encapsulation Process Breakdown](screenshots/encapsulation-process-diagram.png)
 
 Encapsulation is the process of adding layer-specific information to data as it moves down through the OSI model before being transmitted across a network.
 
