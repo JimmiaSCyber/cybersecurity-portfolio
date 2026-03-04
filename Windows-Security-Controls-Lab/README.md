@@ -242,20 +242,185 @@ Full scans are used when:
 
 ---
 
+## Step 12: Execute Full Scan
 
+![Execute full scan](screenshots/scan-now.png)
 
+"Scan now" is selected to begin the full system scan.
 
+The scan progress confirms:
 
+- Antivirus engine is operational
+- Definitions are updated
+- System integrity is being evaluated
 
+In enterprise environments, scheduled full scans are often configured via Group Policy or endpoint management platforms.
 
+---
 
+### Step 13: Open Windows Terminal (Admin)
 
+![Open Windows Terminal](screenshots/scan-options-terminal.png)
 
+The Start button is right-clicked and **Terminal (Admin)** is selected.
 
+This opens Windows Terminal with administrative privileges.
 
+Real-World Importance:
 
+Many security and system validation tasks require elevated privileges.  
+Running as Administrator ensures access to Defender services and system-level configurations.
 
+In MSP environments, technicians frequently escalate to admin terminals to verify system health, run diagnostic commands, and perform remediation tasks.
 
+---
+
+## Step 14: User Account Control (UAC) Prompt
+
+![User Account Control Prompt](screenshots/do-you-want-to-allow.png)
+
+A User Account Control (UAC) prompt appears asking:
+
+"Do you want to allow this app to make changes to your device?"
+
+Selecting **Yes** grants elevated administrative access.
+
+Real-World Importance:
+
+UAC prevents unauthorized privilege escalation.  
+This confirms:
+
+- The account has administrative rights
+- Privileged commands are being executed intentionally
+
+In production environments, UAC acts as a security boundary to prevent silent malware elevation.
+
+---
+
+## Step 15: Verify Defender Status Using PowerShell
+
+![Verify Defender Status Using Powershell](screenshots/get-mpcomputers-status.png)
+
+Get-MpComputerStatus
+
+This PowerShell cmdlet retrieves the current operational status of Microsoft Defender.
+
+The output provides:
+
+- AntivirusEnabled
+- AntispywareEnabled
+- RealTimeProtectionEnabled
+- BehaviorMonitorEnabled
+- AntivirusSignatureLastUpdated
+- Engine and Product Version
+- Tamper Protection status
+
+What This Confirms:
+
+- Defender services are running
+- Real-time protection is active
+- Signatures are current
+- No service corruption exists
+- Tamper protection is enabled
+
+Real-World Importance:
+
+This command is extremely valuable in enterprise environments.
+
+Rather than relying on GUI indicators, technicians can:
+
+- Script validation checks
+- Remotely verify Defender status
+- Confirm compliance baselines
+- Detect disabled security services
+
+This is commonly used in PowerShell automation, RMM platforms, and security audits.
+
+---
+
+## Step 16: Update Defender Signatures
+
+![Update Defender Signatures](screenshots/update-mpsignature.png)
+
+Update-MpSignature
+
+This forces Microsoft Defender to download the latest malware definition updates.
+
+Why This Matters:
+
+Malware detection depends heavily on updated threat definitions.
+
+Outdated signatures increase risk of infection.
+
+In MSP environments:
+
+- This command may be run after malware detection
+- Used during onboarding of new systems
+- Performed during security maintenance windows
+
+Ensuring up-to-date signatures is part of baseline endpoint security hygiene.
+
+---
+
+## Step 17: Initiate Quick Scan via PowerShell
+
+![Initiate Quick scan via Powershell](screenshots/start-mpscan.png)
+
+Start-MpScan -ScanType QuickScan
+
+This starts a quick malware scan from the command line.
+
+Why Use PowerShell Instead of GUI?
+
+- Enables automation
+- Can be executed remotely
+- Allows scripting across multiple machines
+- Integrates with management tools
+
+In enterprise environments, this is often deployed via:
+
+- PowerShell remoting
+- RMM tools
+- Group Policy scripts
+- Endpoint management platforms
+
+---
+
+### Security Validation Summary (Advanced Level)
+
+By using PowerShell commands, this task demonstrates:
+
+- Ability to verify endpoint protection programmatically
+- Understanding of Defender operational state
+- Knowledge of signature management
+- Familiarity with security automation concepts
+- Administrative command-line proficiency
+
+This moves beyond basic GUI usage and demonstrates enterprise-ready troubleshooting capability.
+
+# Lab Conclusion
+
+This lab demonstrates practical configuration and validation of built-in Windows security controls using both graphical and command-line methods.
+
+Through this process, I:
+
+- Verified Microsoft Defender real-time protection status
+- Executed quick and full system scans
+- Confirmed antivirus signature updates
+- Validated Defender operational health using PowerShell
+- Demonstrated administrative privilege management through UAC
+
+By using both the Windows Security interface and PowerShell cmdlets (Get-MpComputerStatus, Update-MpSignature, Start-MpScan), I showed the ability to perform endpoint security validation at both a basic support level and a more advanced administrative level.
+
+From a real-world MSP perspective, these tasks reflect common responsibilities such as:
+
+- Verifying antivirus health during onboarding
+- Investigating suspected malware activity
+- Ensuring endpoint compliance with security baselines
+- Running remote security checks using command-line tools
+- Maintaining updated threat definitions
+
+This lab reflects hands-on experience performing real-world endpoint security validation and configuration. It demonstrates not only familiarity with Windows Defender settings, but also the ability to verify and manage security controls using administrative tools and PowerShell — skills directly applicable to MSP, help desk, and junior system administration roles.
 
 
 
