@@ -19,7 +19,7 @@ This lab demonstrates controlled service exposure, transport-layer filtering, ru
 
 The **Start button** is clicked to access system administrative tools.
 
-![Open Start Menu](screenshots/windows-defender/click-start-button.png)
+![Open Start Menu](screenshots/click-start-button.png)
 
 The Start menu serves as the primary launch interface for system utilities, management consoles, and administrative tools within Windows.
 
