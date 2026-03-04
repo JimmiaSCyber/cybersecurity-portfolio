@@ -1,4 +1,4 @@
-# TryHackMe – Intro to Networking
+# Intro to Networking
 
 ## Objective
 Build foundational knowledge of networking concepts and troubleshooting tools.
@@ -38,7 +38,7 @@ Build foundational knowledge of networking concepts and troubleshooting tools.
 Understanding networking fundamentals allows IT technicians to diagnose connectivity issues, identify service exposure, and support client network environments effectively.
 
 
-# TryHackMe – Introductory Networking Write-Up
+# Introductory Networking Write-Up
 
 ## Room Overview
 This room provides foundational knowledge of networking concepts and introduces core tools used for troubleshooting and analysis. The focus is on understanding how data moves across networks and how to verify connectivity and domain resolution.
