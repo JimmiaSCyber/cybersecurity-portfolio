@@ -38,3 +38,73 @@ This lab demonstrates practical endpoint administration and system hardening ski
 - Endpoint Security Management
 
 Each section below documents the configuration process, screenshots, and analysis of security impact.
+
+# Task 1 – Configure Windows Defender Antivirus Settings
+
+## Objective
+
+Review and configure Windows Defender Antivirus settings to ensure real-time protection and threat mitigation are properly enabled on a Windows workstation.
+
+---
+
+## Steps Performed
+
+1. Opened **Windows Security** from the Start menu.
+2. Navigated to **Virus & Threat Protection**.
+3. Reviewed current protection status.
+4. Verified that:
+   - Real-time protection is enabled
+   - Cloud-delivered protection is enabled
+   - Automatic sample submission is enabled
+5. Opened **Virus & Threat Protection Settings** to confirm configuration.
+
+---
+
+## Security Features Reviewed
+
+### Real-Time Protection
+Monitors files and programs for malicious activity as they are accessed.
+
+### Cloud-Delivered Protection
+Uses Microsoft’s cloud intelligence to detect emerging threats.
+
+### Automatic Sample Submission
+Sends suspicious files to Microsoft for deeper analysis.
+
+---
+
+## Why This Matters
+
+Windows Defender is the first line of defense against malware on endpoint systems.
+
+Ensuring these protections are enabled:
+
+- Reduces malware infection risk
+- Prevents unauthorized software execution
+- Strengthens baseline endpoint security
+- Supports compliance with security best practices
+
+In MSP environments, verifying endpoint antivirus configuration is a common support task.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
