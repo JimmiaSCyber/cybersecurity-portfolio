@@ -550,9 +550,9 @@ These tools allow technicians to see each intermediate router (hop) that forward
 
 ## Screenshot Example Commands
 
-Linux / macOS:
-traceroute 
-![Traceroute Linux CMD](traceroute-linux.png)
+# Linux / macOS: traceroute 
+
+![Traceroute](screenshots/traceroute-linux.png)
 
 ## Traceroute Output Explanation
 
@@ -581,9 +581,9 @@ This output confirms:
 
 The final hop confirms successful communication with the target server.
 
-Windows:
-tracert 
-![Tracert Windows CMD](screenshots/tracert-win.png)
+# Windows: tracert 
+
+![Tracert](screenshots/tracert-win.png)
 
 ## Tracert (Windows) Output Explanation
 
