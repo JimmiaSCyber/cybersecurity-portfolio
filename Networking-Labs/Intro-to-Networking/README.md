@@ -538,6 +538,91 @@ Ping relies on ICMP, which may be disabled or blocked by firewalls.
 
 If a host does not respond to ping, it does not always mean the system is offline. It may simply be configured not to respond to ICMP requests.
 
+# Task 6 – Traceroute / Tracert
+
+The `traceroute` (Linux/macOS) and `tracert` (Windows) commands are used to identify the path that packets take from a source device to a destination host.
+
+While the command name differs between operating systems, the purpose and functionality remain the same.
+
+These tools allow technicians to see each intermediate router (hop) that forwards traffic along the route to its destination.
+
+---
+
+## Screenshot Example Commands
+
+Linux / macOS:
+traceroute 
+
+
+
+Windows:
+tracert tryhackme.com
+
+---
+
+## How Traceroute Works
+
+Traceroute operates by manipulating the TTL (Time To Live) value inside IP packets.
+
+TTL limits how many hops a packet can travel before being discarded.
+
+The process works as follows:
+
+1. A packet is sent with TTL set to 1.
+2. The first router decreases TTL to 0 and discards the packet.
+3. That router sends back an ICMP "Time Exceeded" message.
+4. The sender records that router as Hop 1.
+5. The TTL is increased to 2, and the process repeats.
+
+By gradually increasing TTL values, traceroute maps each hop between the source and destination.
+
+---
+
+## What the Output Shows
+
+The output typically includes:
+
+- Hop number
+- IP address or hostname of each router
+- Round-trip time (latency) for each attempt
+
+Multiple time measurements are displayed to show consistency.
+
+Asterisks (*) may appear if a router does not respond.
+
+---
+
+## Why This Matters in IT and MSP Roles
+
+Traceroute is useful for:
+
+- Identifying where traffic is being delayed
+- Diagnosing routing issues
+- Determining whether a problem exists internally or with an ISP
+- Investigating intermittent connectivity problems
+
+For example:
+
+If ping fails but traceroute reaches several hops before stopping, the issue may exist beyond the local network.
+
+If latency spikes at a specific hop, it may indicate congestion at that router.
+
+---
+
+## Limitations
+
+- Some routers block ICMP responses, which may show as timeouts.
+- The outbound path may not match the return path.
+- A successful traceroute does not guarantee application-layer functionality.
+
+
+
+
+
+
+
+
+
 
 
 
