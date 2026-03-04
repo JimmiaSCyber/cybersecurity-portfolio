@@ -756,7 +756,64 @@ WHOIS provides context about who controls a domain and how long it has existed.
 
 WHOIS is an investigative starting point rather than a complete security solution.
 
+# Task 8 – DIG
 
+The `dig` (Domain Information Groper) command is used to query DNS records and analyze how domain names resolve to IP addresses.
+
+DNS (Domain Name System) translates human-readable domain names (e.g., google.com) into IP addresses that computers use to communicate.
+
+---
+
+## Example Command
+
+dig google.com
+
+---
+
+## What DIG Displays
+
+A typical dig output includes:
+
+- The queried domain name
+- The DNS server used for the lookup
+- The IP address returned (A record)
+- Query time
+- DNS record type
+- Authoritative answer section
+
+The most important section in the output is the "ANSWER SECTION," which shows the resolved IP address for the domain.
+
+---
+
+## Common DNS Record Types
+
+Some common DNS record types include:
+
+- **A Record** – Maps a domain name to an IPv4 address.
+- **AAAA Record** – Maps a domain name to an IPv6 address.
+- **MX Record** – Specifies mail servers responsible for email.
+- **NS Record** – Identifies authoritative name servers.
+- **TXT Record** – Stores text-based information (often used for SPF, DKIM, and domain verification).
+
+These records determine how traffic is routed and how services are delivered.
+
+---
+
+## Why DIG Matters
+
+DIG is useful for:
+
+- Verifying DNS resolution
+- Troubleshooting website accessibility issues
+- Identifying mail server configurations
+- Investigating domain misconfigurations
+- Confirming whether DNS changes have propagated
+
+For example:
+
+If a website is unreachable, running dig can confirm whether the domain is resolving to the correct IP address.
+
+DIG provides deeper visibility into DNS behavior compared to simple ping tests.
 
 
 
