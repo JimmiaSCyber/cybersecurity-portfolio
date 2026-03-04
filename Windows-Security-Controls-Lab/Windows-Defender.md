@@ -636,7 +636,257 @@ Security teams use firewall logs to:
 
 Understanding firewall property configuration demonstrates awareness of security monitoring, not just rule creation.
 
+---
 
+### Step 19: Select the Domain Profile Tab
+
+![Domain Profile Tab](screenshots/windows-defender/click-domain-profile-tab.png)
+
+The **Domain Profile** tab is selected within Windows Defender Firewall Properties.
+
+#### What Is Happening:
+
+This tab defines firewall behavior when the system is connected to a corporate Active Directory domain network.
+
+The Domain profile is typically the most trusted enterprise network environment.
+
+#### Technical Insight:
+
+Each firewall profile (Domain, Private, Public) has separate:
+
+- Default inbound behavior
+- Default outbound behavior
+- Logging configuration
+- IPSec enforcement settings
+
+Domain profile settings are critical because they govern how endpoints behave inside corporate infrastructure.
+
+#### Real-World Importance:
+
+In enterprise environments:
+
+- Domain profile rules are often enforced via Group Policy.
+- Security baselines require strict inbound blocking.
+- Logging is frequently mandatory for compliance and monitoring.
+
+Improper Domain profile configuration can lead to internal lateral movement during a breach.
+
+Hardening the Domain profile reduces internal attack surface.
+
+---
+
+### Step 20: Open Logging Configuration
+
+![Click Customize Logging](screenshots/windows-defender/click-customize-lodging.png)
+
+The **Customize** button under the Logging section is selected.
+
+#### What Is Happening:
+
+This opens advanced logging configuration settings for the Domain profile.
+
+Firewall logging allows administrators to capture:
+
+- Dropped packets
+- Successful connections
+- Log file path
+- Log size limits
+
+#### Technical Insight:
+
+By default, logging is minimal.
+
+Without logging enabled:
+- Suspicious connection attempts may go unnoticed.
+- Brute-force attacks may not be recorded.
+- Incident response lacks evidence.
+
+Firewall logging writes events to:
+
+%systemroot%\system32\LogFiles\Firewall\pfirewall.log
+
+#### Real-World Importance:
+
+Firewall logs are frequently ingested into:
+
+- SIEM platforms (Splunk, Sentinel, QRadar)
+- Security monitoring tools
+- Incident response workflows
+
+Without logging, security teams lose visibility into network-layer activity.
+
+Visibility equals control.
+
+---
+
+### Step 21: Enable Logging of Dropped Packets
+
+![Log Dropped Packets](screenshots/windows-defender/set-log-dropped-packets.png)
+
+Setting changed:
+
+Log dropped packets → Yes
+
+#### What This Does:
+
+The firewall will now log all traffic that is blocked by rule enforcement.
+
+This includes:
+
+- Port scanning attempts
+- Blocked RDP attempts
+- Unauthorized service access attempts
+- Suspicious inbound traffic
+
+#### Technical Insight:
+
+Dropped packet logs provide insight into:
+
+- Attack reconnaissance behavior
+- Misconfigured applications
+- Unauthorized connection attempts
+
+Repeated dropped traffic from a single IP may indicate:
+
+- Brute-force attempts
+- Automated scanning
+- Malicious bot activity
+
+#### Real-World Importance:
+
+In enterprise security operations:
+
+Logging dropped packets is essential for:
+
+- Detecting brute-force attacks
+- Identifying scanning behavior
+- Monitoring exploitation attempts
+- Supporting forensic investigations
+
+Without this logging, blocked threats remain invisible.
+
+Security teams cannot defend what they cannot see.
+
+---
+
+### Step 22: Enable Logging of Successful Connections
+
+![Log Successful Connections](screenshots/windows-defender/set-log-successful-connections.png)
+
+Setting changed:
+
+Log successful connections → Yes
+
+#### What This Does:
+
+The firewall now logs traffic that is successfully allowed through.
+
+This includes:
+
+- Allowed HTTP traffic (Port 80)
+- Authorized RDP sessions (if permitted)
+- Approved service communications
+
+#### Technical Insight:
+
+Logging successful connections provides:
+
+- Baseline network behavior visibility
+- Service usage tracking
+- Detection of unusual connection patterns
+
+For example:
+
+If a workstation suddenly begins accepting large volumes of inbound traffic on port 80, this may indicate compromise or misuse.
+
+#### Real-World Importance:
+
+Successful connection logs help security teams:
+
+- Establish normal traffic baselines
+- Detect anomalies
+- Investigate lateral movement
+- Identify unauthorized service exposure
+
+In mature environments, firewall logs are correlated with:
+
+- Authentication logs
+- Endpoint detection alerts
+- IDS/IPS events
+
+Logging successful connections supports proactive threat hunting.
+
+---
+
+### Step 23: Apply Logging Configuration
+
+![Apply Logging Settings](screenshots/windows-defender/click-okay-to-apply-customize-logging.png)
+
+The **OK** button is selected to apply logging changes.
+
+#### What Is Happening:
+
+Firewall logging configuration is committed to the local policy store.
+
+The system will now begin recording:
+
+- Blocked traffic events
+- Successful connection events
+
+According to the defined profile settings.
+
+#### Technical Insight:
+
+Log file size is set to 4,096 KB (4 MB).
+
+If logs exceed this size:
+- Older entries are overwritten.
+- Log rotation occurs automatically.
+
+In enterprise environments, centralized log forwarding is preferred to avoid data loss.
+
+#### Real-World Importance:
+
+Applying logging is not just configuration — it activates monitoring capability.
+
+Security teams rely on this data to:
+
+- Perform investigations
+- Identify attack patterns
+- Support compliance audits
+- Reconstruct incident timelines
+
+Firewall logging is a foundational detection control.
+
+---
+
+### Step 24: Close Firewall Console
+
+![Close Firewall Console](screenshots/windows-defender/close-the-firewall-console.png)
+
+The firewall management console is closed.
+
+#### Technical Insight:
+
+Closing the console does not disable logging.
+
+Firewall rules and logging policies remain enforced by the Windows Filtering Platform (WFP) at the kernel level.
+
+Security controls continue operating in the background.
+
+#### Real-World Importance:
+
+Security configurations must persist beyond administrative sessions.
+
+In enterprise environments:
+
+- Firewall enforcement continues after reboot.
+- Logging continues continuously.
+- Policies remain active even when no administrator is logged in.
+
+This ensures continuous protection and continuous monitoring.
+
+Persistent enforcement is a critical component of defensive architecture.
 
 
 
