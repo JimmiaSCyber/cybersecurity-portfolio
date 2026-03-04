@@ -119,7 +119,7 @@ Using search allows quick access to security tools without navigating through Co
 
 ## Step 4: Open Virus & Threat Protection
 
-![Type windows security ](screenshots/click-virus-threat-protection.png)
+![Open Virus & Threat Protection ](screenshots/click-virus-threat-protection.png)
 
 Inside Windows Security, **Virus & Threat Protection** is selected.
 
@@ -131,6 +131,123 @@ This section controls Microsoft Defender Antivirus and handles:
 - Scan history
 
 In MSP environments, this is one of the first places technicians check when investigating suspected malware.
+
+---
+
+## Step 5: Run a Quick Scan
+
+![Run a Quick Scan ](screenshots/click-quick-scan.png)
+
+The **Quick Scan** option is selected.
+
+A quick scan checks common infection locations such as:
+
+- Running processes
+- System memory
+- Startup locations
+- Critical system folders
+
+Real-World Importance:
+Quick scans are often performed during routine maintenance or when a client reports unusual system behavior.
+
+---
+
+## Step 6: Monitor Scan Progress
+
+![Wait for scan to complete](screenshots/wait-for-scan-to-complete.png)
+
+The scan runs and displays:
+
+- Files scanned
+- Estimated time remaining
+
+This confirms that antivirus definitions are functioning properly and that the engine is actively scanning.
+
+In real-world support, verifying scan execution ensures that endpoint protection has not been disabled or corrupted.
+
+---
+
+## Step 7: Access Virus & Threat Protection Settings
+
+![Manage Settings](screenshots/manage-settings.png)
+
+"Manage settings" is selected under Virus & Threat Protection settings.
+
+This is where core Defender protections are configured.
+
+---
+
+## Step 8: Verify Real-Time Protection
+
+![Real time protection enable](screenshots/real-time-protection.png)
+
+Real-Time Protection is confirmed as **ON**.
+
+Real-Time Protection is critical because:
+
+- It actively monitors file activity.
+- It blocks malicious programs before execution.
+- It prevents zero-day threats from running unchecked.
+
+If Real-Time Protection is disabled in a production environment, the endpoint becomes significantly vulnerable.
+
+MSP technicians frequently verify this setting when onboarding new devices or investigating security incidents.
+
+---
+
+## Step 9: Navigate Back to Main Threat Page
+
+![Navigate back to main page](screenshots/click-the-back-button.png)
+
+The back arrow is selected to return to the main Virus & Threat Protection dashboard.
+
+This ensures proper navigation and confirms no configuration errors occurred.
+
+---
+
+## Step 10: Open Scan Options
+
+![Open Scan Options](screenshots/scan-options.png)
+
+"Scan options" is selected.
+
+This allows selection of:
+
+- Quick Scan
+- Full Scan
+- Custom Scan
+- Microsoft Defender Offline Scan
+
+---
+
+## Step 11: Perform a Full Scan
+
+![Perform full scan](screenshots/full-scan.png)
+
+The **Full Scan** option is selected.
+
+A full scan checks:
+
+- All files
+- All running programs
+- Entire hard drive contents
+
+Real-World Importance:
+Full scans are used when:
+
+- Persistent malware is suspected
+- A quick scan returns suspicious behavior
+- A system shows performance degradation
+- A machine is being prepared for production use
+
+---
+
+
+
+
+
+
+
 
 
 
