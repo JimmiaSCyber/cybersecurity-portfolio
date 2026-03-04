@@ -888,6 +888,60 @@ This ensures continuous protection and continuous monitoring.
 
 Persistent enforcement is a critical component of defensive architecture.
 
+---
+
+## Lab Conclusion
+
+This lab demonstrates practical configuration, auditing, and monitoring of Windows Defender Firewall using both graphical and command-line administration methods.
+
+Through this process, I:
+
+    Created a custom inbound firewall rule allowing TCP Port 80 (HTTP)
+    Implemented a blocking rule for TCP Port 3389 (RDP) to reduce attack surface
+    Verified firewall profile enforcement across Domain, Private, and Public networks
+    Audited active inbound rules using PowerShell
+    Validated rule synchronization between GUI and CLI management
+    Reviewed global firewall default behaviors (deny-by-default inbound policy)
+    Configured firewall logging for both dropped and successful connections
+
+By using both the Windows Defender Firewall MMC console (wf.msc) and PowerShell cmdlets such as:
+
+    Get-NetFirewallProfile
+    Get-NetFirewallRule
+    New-NetFirewallRule
+
+I demonstrated the ability to manage endpoint firewall security at both a support-level and administrative scripting level.
+
+From a real-world MSP and enterprise perspective, these tasks reflect common responsibilities such as:
+
+    Controlling service exposure during server or workstation deployment
+    Blocking high-risk services such as exposed RDP
+    Verifying endpoint firewall compliance during onboarding
+    Auditing inbound rule inventory for security reviews
+    Enabling logging for monitoring and incident response
+    Validating firewall posture across multiple network profiles
+
+This lab reflects hands-on experience implementing transport-layer traffic control (Layer 4 filtering), enforcing deny-by-default principles, reducing attack surface, and enabling monitoring visibility.
+
+It demonstrates not only familiarity with Windows Defender Firewall configuration, but also the ability to validate, audit, and harden endpoint firewall controls using both GUI tools and PowerShell — skills directly applicable to MSP operations, security operations support, help desk administration, and junior system administration roles.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
