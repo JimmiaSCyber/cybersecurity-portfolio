@@ -685,6 +685,34 @@ When a domain is registered, details about its ownership and administrative info
 
 ![WHOIS Command ](screenshots/whois-command.png)
 
+## WHOIS Output Explanation
+
+This WHOIS query was performed on the domain bbc.co.uk.
+
+The output provides publicly available registration information about the domain.
+
+Key observations:
+
+- **Registrar:** British Broadcasting Corporation (BBC)  
+  This identifies the organization that owns or manages the domain.
+
+- **Registration Date:** Before Aug-1996  
+  This indicates the domain has existed for a long time, suggesting legitimacy and established ownership.
+
+- **Expiry Date:** 13-Dec-2025  
+  This shows when the domain registration is set to expire.
+
+- **Registration Status:** Registered until expiry date  
+  This confirms the domain is currently active.
+
+- **Name Servers:**  
+  ns3.bbc.co.uk  
+  ns4.bbc.co.uk  
+  These are the authoritative DNS servers responsible for resolving the domain.
+
+The WHOIS lookup confirms that this is a legitimate, long-standing domain owned by a recognized organization.
+
+In a security context, WHOIS data can help determine whether a domain is newly registered, suspicious, or associated with known infrastructure. Older domains with consistent ownership are typically less likely to be malicious compared to newly created domains often used in phishing campaigns.
 ---
 
 ## What WHOIS Provides
