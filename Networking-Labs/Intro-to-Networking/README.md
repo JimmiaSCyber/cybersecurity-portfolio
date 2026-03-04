@@ -683,6 +683,7 @@ When a domain is registered, details about its ownership and administrative info
 
 # WHOIS 
 
+![WHOIS Command ](screenshots/whois-command.png)
 
 ---
 
