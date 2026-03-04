@@ -339,3 +339,305 @@ Failure to verify firewall changes can result in:
 Proper validation is a standard operational control in enterprise environments.
 
 ---
+
+### Step 11: Minimize Firewall Console
+
+![Minimize Firewall Console](screenshots/windows-defender/minimize-firewall-console.png)
+
+The Windows Defender Firewall console is minimized.
+
+#### What Is Happening:
+
+The MMC firewall console is temporarily minimized in order to transition from GUI-based configuration to command-line validation using PowerShell.
+
+#### Technical Insight:
+
+Firewall rules created through the GUI are written to the same local policy store accessed by PowerShell cmdlets.
+
+Minimizing the console allows us to verify firewall behavior using CLI tools without closing the session.
+
+#### Real-World Importance:
+
+In enterprise environments:
+
+- Engineers frequently switch between GUI and CLI.
+- GUI is useful for visual configuration.
+- PowerShell is used for auditing, scripting, automation, and remote administration.
+
+Understanding both interfaces demonstrates operational flexibility — a critical skill in MSP and enterprise IT environments.
+
+---
+
+### Step 12: Verify Firewall Profiles Using PowerShell
+
+![Get Firewall Profiles](screenshots/windows-defender/Get-NetFirewallProfile.png)
+
+PowerShell command executed:
+
+Get-NetFirewallProfile | Format-Table Name, Enabled
+
+#### What This Command Does:
+
+This retrieves the status of all Windows Firewall profiles:
+
+- Domain
+- Private
+- Public
+
+Output confirms each profile is enabled (True).
+
+#### Technical Insight:
+
+Each profile enforces separate inbound and outbound rule sets.
+
+If any profile is disabled:
+- The system may be exposed when switching network types.
+- Security posture becomes inconsistent.
+
+This command verifies firewall enforcement across all contexts.
+
+#### Real-World Importance:
+
+In enterprise environments, technicians use this command to:
+
+- Audit endpoint compliance
+- Verify baseline enforcement
+- Ensure malware has not disabled firewall protections
+- Perform remote health checks across large device fleets
+
+PowerShell validation scales. GUI validation does not.
+
+---
+
+### Step 13: Create a Block Rule for RDP (Port 3389)
+
+![Block RDP Rule](screenshots/windows-defender/block-RDP.png)
+
+PowerShell command executed:
+
+New-NetFirewallRule -DisplayName "Block RDP" -Direction Inbound -LocalPort 3389 -Protocol TCP -Action Block
+
+#### What This Command Does:
+
+Creates a new inbound firewall rule that:
+
+- Targets TCP port 3389
+- Applies to inbound traffic
+- Blocks the connection
+- Is enabled immediately
+
+#### Technical Insight:
+
+Port 3389 is used for Remote Desktop Protocol (RDP).
+
+RDP is one of the most exploited services in:
+
+- Brute-force attacks
+- Credential harvesting
+- Ransomware deployment
+- Lateral movement after compromise
+
+Blocking RDP significantly reduces attack surface.
+
+#### Real-World Importance:
+
+Open RDP ports are responsible for countless breaches.
+
+Enterprise best practices include:
+
+- Blocking RDP at endpoint
+- Restricting RDP to VPN-only access
+- Limiting by source IP
+- Enforcing MFA
+- Logging and monitoring RDP attempts
+
+Demonstrating port-level blocking via PowerShell shows real-world defensive capability.
+
+---
+
+### Step 14: View All Enabled Inbound Rules
+
+![View Active Inbound Rules](screenshots/windows-defender/view-all-active-inbound-rules.png)
+
+PowerShell command executed:
+
+Get-NetFirewallRule -Enabled True -Direction Inbound | Format-Table -AutoSize
+
+#### What This Command Does:
+
+Displays all active inbound firewall rules.
+
+This includes:
+- Default Windows service rules
+- Core networking rules
+- Custom rules (Allow HTTP, Block RDP)
+
+#### Technical Insight:
+
+Firewall rule sprawl can occur over time.
+
+Administrators must periodically:
+
+- Review rule inventory
+- Remove unnecessary rules
+- Detect conflicting rules
+- Validate rule necessity
+
+#### Real-World Importance:
+
+Security audits often require:
+
+- Evidence of controlled inbound exposure
+- Justification for each open port
+- Confirmation that sensitive services are blocked
+
+This command supports compliance reporting and incident response investigations.
+
+---
+
+### Step 15: Close Firewall Console
+
+![Close Firewall Console](screenshots/windows-defender/close-the-firewall-console.png)
+
+The firewall MMC console is closed.
+
+#### Technical Insight:
+
+Closing the console does not remove or disable rules.
+
+Firewall policies remain stored in the Local Policy Store and enforced by the Windows Filtering Platform (WFP).
+
+#### Real-World Importance:
+
+Security configurations persist beyond interface sessions.
+
+In enterprise environments:
+
+- Firewall rules are enforced continuously
+- Settings survive reboots
+- Policy enforcement occurs at kernel level
+
+Understanding persistence is critical for validating long-term configuration integrity.
+
+---
+
+### Step 16: Restore Firewall Console
+
+![Restore Firewall Console](screenshots/windows-defender/restore-the-firewall-console.png)
+
+The firewall console is reopened.
+
+#### Technical Insight:
+
+Rules created via PowerShell (e.g., Block RDP) appear immediately in the GUI.
+
+This confirms synchronization between:
+
+- GUI-based management
+- PowerShell-based management
+
+Both interact with the same firewall policy store.
+
+#### Real-World Importance:
+
+Enterprise administrators often:
+
+- Script changes via PowerShell
+- Validate via GUI
+- Capture screenshots for change management documentation
+
+Cross-verification reduces configuration errors.
+
+---
+
+### Step 17: Access Global Firewall Properties
+
+![Windows Defender Advanced Security](screenshots/windows-defender/windows-defender-advanced-security.png)
+
+The top-level firewall node is selected.
+
+This displays:
+
+- Domain Profile status
+- Private Profile status
+- Public Profile status
+- Default inbound/outbound behaviors
+
+#### Technical Insight:
+
+By default:
+
+- Inbound connections not matching a rule are blocked.
+- Outbound connections not matching a rule are allowed.
+
+This represents a deny-by-default inbound model.
+
+#### Real-World Importance:
+
+Deny-by-default is a foundational security principle.
+
+Enterprise security architecture depends on:
+
+- Blocking unsolicited inbound traffic
+- Explicitly allowing required services
+- Minimizing exposure
+
+This reduces vulnerability exploitation opportunities.
+
+---
+
+### Step 18: Open Firewall Properties Configuration
+
+![Select Properties](screenshots/windows-defender/select-properties.png)
+
+Right-clicking the firewall root node and selecting **Properties** opens advanced configuration settings.
+
+#### What Can Be Configured Here:
+
+- Default inbound behavior
+- Default outbound behavior
+- Logging of dropped packets
+- Logging of successful connections
+- Profile-specific settings
+- IPSec enforcement
+- Notification settings
+
+#### Technical Insight:
+
+Logging configuration is critical for:
+
+- Detecting intrusion attempts
+- Monitoring dropped traffic
+- Incident response
+- Forensic investigations
+
+Firewall logs can reveal:
+
+- Repeated RDP attempts
+- Port scanning activity
+- Suspicious connection patterns
+
+#### Real-World Importance:
+
+In enterprise environments:
+
+Firewall logging is often required for compliance with:
+
+- PCI-DSS
+- HIPAA
+- SOC 2
+- NIST frameworks
+
+Security teams use firewall logs to:
+
+- Detect brute-force attempts
+- Investigate suspicious traffic
+- Correlate events in SIEM platforms
+
+Understanding firewall property configuration demonstrates awareness of security monitoring, not just rule creation.
+
+
+
+
+
+
