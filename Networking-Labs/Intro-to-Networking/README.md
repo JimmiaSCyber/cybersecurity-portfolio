@@ -671,6 +671,81 @@ If latency spikes at a specific hop, it may indicate congestion at that router.
 - A successful traceroute does not guarantee application-layer functionality.
 
 
+# Task 7 – WHOIS
+
+The `whois` command is used to retrieve publicly available registration information about a domain name.
+
+When a domain is registered, details about its ownership and administrative information are stored in a WHOIS database. This database can be queried to gather information about the domain’s registrar and associated infrastructure.
+
+---
+
+## Example Command
+
+# WHOIS 
+
+
+---
+
+## What WHOIS Provides
+
+A WHOIS lookup may include:
+
+- Domain registrar
+- Creation and expiration dates
+- Name servers
+- Administrative or technical contact details
+- Domain status (active, clientTransferProhibited, etc.)
+
+Some domains use privacy protection services, which hide personal registrant details.
+
+---
+
+## Why WHOIS Matters in IT and Security
+
+WHOIS is useful for:
+
+- Identifying domain ownership
+- Verifying legitimacy of a website
+- Investigating suspicious domains
+- Understanding infrastructure relationships
+- Determining domain expiration timelines
+
+For example:
+
+If a client reports a suspicious email, checking the sender’s domain registration date may reveal that it was recently created — a common indicator of phishing campaigns.
+
+WHOIS provides context about who controls a domain and how long it has existed.
+
+---
+
+## Limitations
+
+- Many domains use privacy protection, masking registrant details.
+- WHOIS does not provide real-time threat intelligence.
+- Information may be limited depending on registry policies.
+
+WHOIS is an investigative starting point rather than a complete security solution.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
