@@ -552,11 +552,66 @@ These tools allow technicians to see each intermediate router (hop) that forward
 
 Linux / macOS:
 traceroute 
+![Traceroute Linux CMD](traceroute-linux.png)
 
+## Traceroute Output Explanation
 
+The traceroute output shows the path taken from the local machine to google.com (216.58.205.46).
+
+Each numbered line represents a hop — a router or intermediary device that forwards the packet toward its destination.
+
+For example:
+
+- Hop 1 (_gateway – 172.16.255.254) is the local network gateway.
+- Subsequent hops show ISP infrastructure and backbone routers.
+- The final hop (lhr48s23-in-f14.1e100.net – 216.58.205.46) is Google's server.
+
+Each hop displays three time measurements (in milliseconds). These represent round-trip latency for three probe packets sent to that router.
+
+Lower numbers indicate faster response times. Sudden increases in latency may suggest congestion or distance-related delay.
+
+If a hop displayed asterisks (*), it would indicate that the router did not respond to the probe, often due to firewall filtering or ICMP restrictions.
+
+This output confirms:
+
+- Network connectivity exists
+- Routing is functioning properly
+- The full path to the destination can be observed
+- Latency remains relatively stable across hops
+
+The final hop confirms successful communication with the target server.
 
 Windows:
-tracert tryhackme.com
+tracert 
+![Tracert Windows CMD](screenshots/tracert-win.png)
+
+## Tracert (Windows) Output Explanation
+
+This output shows the Windows equivalent of traceroute using the `tracert` command.
+
+The route is traced from the local Windows machine to www.google.com (142.250.182.164).
+
+Each numbered line represents a hop — a router that forwards traffic toward the final destination.
+
+Key observations:
+
+- The first hop (10.143.85.102) is typically the local gateway or internal router.
+- Subsequent hops show ISP and backbone routing infrastructure.
+- The final hop (del11s10-in-f4.1e100.net – 142.250.182.164) confirms arrival at Google’s server.
+- “Trace complete.” indicates successful path discovery.
+
+Each hop displays three latency measurements in milliseconds. These represent the round-trip time for probe packets.
+
+Consistent low latency suggests stable routing. Significant spikes may indicate congestion or longer geographic distance.
+
+This confirms:
+
+- Network routing is functioning correctly.
+- The destination host is reachable.
+- The full path can be analyzed for performance or troubleshooting.
+
+The Windows `tracert` command performs the same core function as Linux `traceroute`, demonstrating cross-platform network diagnostics.
+
 
 ---
 
