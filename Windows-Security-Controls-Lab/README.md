@@ -2,6 +2,17 @@
 
 ## Objective
 
+## Tools Used
+
+The following tools were utilized to configure and validate Windows Defender security controls:
+
+| Tool | Purpose |
+|------|---------|
+| Windows Security | GUI-based antivirus configuration and scan management |
+| Windows Terminal (Admin) | Elevated administrative access for security validation |
+| PowerShell | Command-line verification of Defender status and signature updates |
+
+
 This lab focuses on configuring and understanding built-in Windows security controls relevant to IT support and MSP environments.
 
 The goal is to demonstrate hands-on experience managing endpoint security settings, user controls, and system protection mechanisms.
