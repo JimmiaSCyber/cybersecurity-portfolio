@@ -766,7 +766,45 @@ DNS (Domain Name System) translates human-readable domain names (e.g., google.co
 
 ## Example Command
 
-dig google.com
+![dig Command](screenshots/dig-command.png)
+
+## DIG Output Explanation
+
+This query was performed using:
+
+dig google.com @1.1.1.1
+
+The "@1.1.1.1" specifies that the DNS request was sent directly to Cloudflare’s public DNS server instead of the system’s default resolver.
+
+Key sections of the output:
+
+- **status: NOERROR**  
+  Indicates that the DNS query was successful and no issues were encountered.
+
+- **QUESTION SECTION**  
+  Shows the domain being queried (google.com) and the record type requested (A record).
+
+- **ANSWER SECTION**  
+  google.com → 216.58.213.14  
+  This is the resolved IPv4 address returned by the DNS server.
+
+- **Query time: 22 msec**  
+  The time it took for the DNS server to respond.
+
+- **SERVER: 1.1.1.1**  
+  Confirms which DNS server handled the request.
+
+- **MSG SIZE rcvd**  
+  Indicates the size of the DNS response packet.
+
+This confirms that:
+
+- DNS resolution is functioning correctly.
+- The domain resolves to a valid IP address.
+- The external DNS server responded successfully.
+- No DNS errors occurred during the lookup.
+
+Using dig with a specified DNS server is useful for troubleshooting DNS propagation issues or verifying whether a problem is local or external.
 
 ---
 
