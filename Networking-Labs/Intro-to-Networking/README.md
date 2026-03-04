@@ -713,6 +713,7 @@ Key observations:
 The WHOIS lookup confirms that this is a legitimate, long-standing domain owned by a recognized organization.
 
 In a security context, WHOIS data can help determine whether a domain is newly registered, suspicious, or associated with known infrastructure. Older domains with consistent ownership are typically less likely to be malicious compared to newly created domains often used in phishing campaigns.
+
 ---
 
 ## What WHOIS Provides
