@@ -31,7 +31,7 @@ IT technicians frequently access system tools from the Start menu when troublesh
 
 ### Step 2: Launch Windows Defender Firewall with Advanced Security (wf.msc)
 
-![Launch Windows Defender Firewall](screenshots/type-wf.msc.png)
+![Launch Windows Defender](screenshots/type-wf.msc.png)
 
 The command `wf.msc` is typed into the search bar and opened.
 
