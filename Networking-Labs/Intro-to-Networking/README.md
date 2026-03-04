@@ -853,7 +853,30 @@ If a website is unreachable, running dig can confirm whether the domain is resol
 
 DIG provides deeper visibility into DNS behavior compared to simple ping tests.
 
+# Overall Networking Takeaways
 
+This room reinforced the foundational concepts required to understand how network communication functions in real-world environments.
+
+Key technical takeaways:
+
+- The OSI and TCP/IP models provide structured frameworks for understanding how data moves across networks.
+- Encapsulation ensures standardized communication by adding layer-specific information as data is transmitted.
+- TCP establishes reliable connections using the Three-Way Handshake, while UDP prioritizes speed over reliability.
+- Common ports identify specific services running on a host and are essential for troubleshooting and security analysis.
+- Ping verifies basic connectivity and latency.
+- Traceroute / Tracert maps the path traffic takes across networks.
+- WHOIS provides domain registration and ownership details.
+- DIG allows deeper DNS analysis and verification of record resolution.
+
+From a practical IT and MSP perspective, this room strengthened my ability to:
+
+- Diagnose connectivity issues
+- Identify routing problems
+- Verify DNS functionality
+- Interpret network diagnostic output
+- Understand how protocols interact across layers
+
+Networking fundamentals form the foundation of both IT support and cybersecurity operations. A clear understanding of these concepts improves troubleshooting efficiency and enhances security awareness.
 
 
 
