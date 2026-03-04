@@ -19,6 +19,8 @@ This lab demonstrates controlled service exposure, port-level access management,
 
 The **Start button** is clicked to access system administrative tools.
 
+![Open Start Menu](screenshots/click-start-button.png)
+
 This is the primary entry point for launching management consoles and configuration utilities in Windows.
 
 Real-World Importance:
@@ -28,6 +30,8 @@ IT technicians frequently access system tools from the Start menu when troublesh
 ---
 
 ### Step 2: Launch Windows Defender Firewall with Advanced Security (wf.msc)
+
+![Launch Windows Defender Firewall](screenshots/type-wf.msc.png)
 
 The command `wf.msc` is typed into the search bar and opened.
 
@@ -50,6 +54,8 @@ In enterprise environments, firewall management is critical for endpoint hardeni
 
 ### Step 3: Select Inbound Rules
 
+![Select Inbound Rules](screenshots/click-inbound-rules.png)
+
 The **Inbound Rules** section is selected from the left panel.
 
 Inbound rules control traffic entering the system from external hosts.
@@ -68,6 +74,9 @@ Workstations should have minimal inbound exposure. Servers may require specific 
 
 The **New Rule** option is selected from the Actions panel.
 
+![New Rule](screenshots/click-new-rule.png)
+
+
 This initiates the New Inbound Rule Wizard.
 
 Real-World Importance:
@@ -77,6 +86,8 @@ Creating controlled rules is part of service deployment, troubleshooting blocked
 ---
 
 ### Step 5: Select Rule Type – Port
+
+![Choose Port](screenshots/choose-port.png)
 
 The **Port** rule type is selected.
 
@@ -100,6 +111,8 @@ Restricting traffic by port reduces attack surface.
 
 ### Step 6: Configure Protocol and Port
 
+![Select TCP](screenshots/select-tcp.png)
+
 Selected:
 - TCP
 - Specific local ports: 80
@@ -120,6 +133,8 @@ Opening only necessary ports follows the **Principle of Least Privilege**. Overl
 
 ### Step 7: Choose Action – Allow the Connection
 
+![Allow the connection](screenshots/allow-the-connection.png)
+
 The option **Allow the connection** is selected.
 
 This permits inbound traffic that matches the defined rule.
@@ -139,6 +154,9 @@ Security teams must balance availability and protection. Allowing services witho
 ---
 
 ### Step 8: Assign Network Profiles
+
+![Click Next](screenshots/click-next-port-protocol.png)
+
 
 Selected:
 - Domain
