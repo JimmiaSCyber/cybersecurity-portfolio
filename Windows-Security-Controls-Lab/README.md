@@ -86,17 +86,51 @@ Ensuring these protections are enabled:
 
 In MSP environments, verifying endpoint antivirus configuration is a common support task.
 
+## Step-by-Step Configuration and Validation Process
 
+### Step 1: Access the Windows Desktop
 
+![Home Screen Display](screenshots/windows-home-screen.png)
 
+The system is booted into a Windows 11 environment.  
+This represents a typical client workstation in a real-world MSP environment.
 
+---
 
+## Step 2: Open the Start Menu
 
+![Click the start button](screenshots/click-start-button.png)
 
+The Start button is selected from the taskbar.
 
+This is the standard method for accessing system applications and administrative tools.
 
+---
 
+## Step 3: Search for Windows Security
 
+![Type windows security ](screenshots/type-windows-security.png)
+
+"Windows Security" is typed into the search bar.
+
+Using search allows quick access to security tools without navigating through Control Panel or Settings menus — a common time-saving practice in IT support environments.
+
+---
+
+## Step 4: Open Virus & Threat Protection
+
+![Type windows security ](screenshots/click-virus-threat-protection.png)
+
+Inside Windows Security, **Virus & Threat Protection** is selected.
+
+This section controls Microsoft Defender Antivirus and handles:
+
+- Malware detection
+- Threat scanning
+- Real-time protection
+- Scan history
+
+In MSP environments, this is one of the first places technicians check when investigating suspected malware.
 
 
 
